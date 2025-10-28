@@ -12,7 +12,8 @@ def main():
     app = ui.build_ui(orch)
     url = f"http://127.0.0.1:{PORT}"
     webbrowser.open(url)
-    app.queue(concurrency_count=8).launch(server_name="0.0.0.0", server_port=PORT)
+    # Gradio v5: queue() not needed; just launch
+    app.launch(server_name="0.0.0.0", server_port=PORT)
 
 if __name__ == "__main__":
     main()
